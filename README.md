@@ -53,5 +53,5 @@ It will be perfect if the frontend is in React and the backend in Rust. When it 
 ## Extra features
 
 - Mutual chat for the players
-    - The chat shows the Player's name and the message.
+   - The chat shows the Player's name and the message.
 - Mutual Scoreboard
