@@ -1,0 +1,215 @@
+html {
+  background-color: #1fc8db;
+  background-image: linear-gradient(140deg, #1775ad 0%, #3b3d58 50%, #10082e 75%);
+  color: white;
+  height: 100vh;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  /*   background-color: #282c34; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.MainPage {
+  /*   background-color: #555555; */
+  height: 90vh;
+  width: 90vw;
+  margin: 0 auto;
+  margin-top: 2%;
+}
+
+.MainPageHeader {
+  /*   background-color: rgb(37, 37, 37); */
+  text-align: center;
+}
+
+.joinContainer {
+  width: 60%;
+  float: right;
+
+  position: relative;
+}
+
+.board {
+  background-color: #1fc8db;
+  background-image: linear-gradient(140deg, #81b7d7 0%, #8087e1 50%, #394ccd 75%);
+  height: 60vh;
+  width: 60vw;
+  margin: 1rem;
+  float: left;
+  box-shadow: 0 5px 10px 0 rgb(155 155 155 / 15%);
+  border-radius: 0.65rem;
+}
+
+.chat {
+  text-align: center;
+  background-color: #1fc8db;
+  background-image: linear-gradient(140deg, #81b7d7 0%, #8087e1 50%, #394ccd 75%);
+  float: right;
+  background-color: rgb(85, 63, 36);
+  height: 60vh;
+  width: 20vw;
+  margin: 1rem;
+  position: relative;
+  box-shadow: 0 5px 10px 0 rgb(155 155 155 / 15%);
+  border-radius: 0.65rem;
+}
+
+.chat ul {
+  text-align: initial;
+  list-style: none;
+}
+
+.chat li {
+  margin-bottom: 0.2rem;
+  margin-top: 0.2rem;
+  margin-right: 0.2rem;
+  box-shadow: 0 5px 10px 0 rgb(155 155 155 / 15%);
+}
+
+.chat li span {
+  font-weight: 900;
+  color: #20038d;
+}
+.chatControlPanel {
+  margin: 1rem;
+  position: absolute;
+  bottom: 0;
+}
+
+.chatControlPanel input {
+  width: 100%;
+}
+
+.chatControlPanel button {
+  width: 100%;
+}
+
+.messageContainer ul {
+  overflow: scroll;
+  height: 45vh;
+  box-shadow: 0 5px 10px 0 rgb(0 0 0 / 15%);
+  border-radius: 0.65rem;
+}
+
+.number {
+  background-color: rgb(1, 1, 82);
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: rgb(21 21 126) !important;
+}
+
+.scoreBoard {
+  background-color: #1fc8db;
+  background-image: linear-gradient(140deg, #81b7d7 0%, #8087e1 50%, #394ccd 75%);
+  width: 60vw;
+  height: 15vh;
+  background-color: rgb(78, 78, 78);
+  float: left;
+  margin: 1rem;
+  box-shadow: 0 5px 10px 0 rgb(155 155 155 / 15%);
+  border-radius: 0.65rem;
+  border: 1px solid rgb(112, 112, 112);
+}
+.sendButtonContainer {
+  background-color: rgb(49, 2, 93);
+  float: right;
+  margin: 1rem;
+  width: 20vw;
+  height: 15vh;
+  box-shadow: 0 5px 10px 0 rgb(155 155 155 / 15%);
+  border-radius: 0.65rem;
+  border: 1px solid rgb(112, 112, 112);
+}
+
+.sendButtonContainer button {
+  background-color: #1fc8db;
+  background-image: linear-gradient(140deg, #81b7d7 0%, #8087e1 50%, #394ccd 75%);
+  margin: 1rem;
+  width: 18vw;
+  height: 11vh;
+}
+
+.buttonDisabled {
+  background-color: #1fc8db !important;
+  background-image: linear-gradient(140deg, #f3dede 0%, #873737 50%, #a54141 75%) !important;
+}
+
+.sendButtonContainer p {
+  font-weight: bold;
+  color: white;
+  margin-top: 1.5rem;
+  font-size: 40px;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
+}
+
+.playerListItem {
+  background-color: blueviolet;
+  margin: 10px;
+}
+
+.number {
+  background-color: rgb(63 79 145);
+  border-radius: 0.65rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 5px 10px 0 rgb(0 0 0 / 15%);
+}
+
+.sendButtonContainer p {
+  font-weight: bold;
+  color: white;
+}
