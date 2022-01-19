@@ -175,12 +175,12 @@ const cronJob = new CronJob("4 * * * * *", async () => {
 
 cronJob.start();
 
-app.get("/getscoreboard", (req, res) => {
+app.get("/getscoreboard", (req: Request, res: Response) => {
   res.send(formatter.getPublicScoreBoard(scoreBoard));
 });
 
 export = scoreBoard;
 
-app.get("/", function (req, res) {
+app.get("/", function (req: Request, res: Response) {
   res.render("index");
 });
