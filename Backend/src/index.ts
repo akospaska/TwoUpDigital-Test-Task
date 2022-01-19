@@ -111,6 +111,12 @@ io.on("connection", (socket: any) => {
     socket.to("TheGame:").emit("rolled_number", theNumber);
   });
 
+  socket.on("next_draw", () => {
+    //sends the next draw seconds left
+
+    socket.to("TheGame:").emit("next_draw", formatter.getNextDrawingTime());
+  });
+
   socket.on("disconnect", () => {
     //remove the player from the scoreboard
     scoreBoard = scoreBoard.filter((a) => a.socketId !== socket.id);
@@ -130,6 +136,14 @@ io.on("connection", (socket: any) => {
     betAvalaible = false;
     socket.to("TheGame:").emit("bet_avalaible", betAvalaible);
   });
+
+  cronJob2.start();
+
+  const cronJob5 = new CronJob("* * * * * *", () => {
+    socket.to("TheGame:").emit("next_draw", formatter.getNextDrawingTime());
+  });
+
+  cronJob5.start();
 
   cronJob2.start();
 
@@ -175,12 +189,12 @@ const cronJob = new CronJob("4 * * * * *", async () => {
 
 cronJob.start();
 
-app.get("/getscoreboard", (req: Request, res: Response) => {
+app.get("/getscoreboard", (req, res) => {
   res.send(formatter.getPublicScoreBoard(scoreBoard));
 });
 
 export = scoreBoard;
 
-app.get("/", function (req: Request, res: Response) {
+app.get("/", function (req, res) {
   res.render("index");
 });

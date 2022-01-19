@@ -12,6 +12,13 @@ for (let i = 0; i < 48; i++) {
 const Board = (props) => {
   const [lastNumber, setLastNumber] = useState([0]);
   const { socket, selectedNumbers, setSelectedNumbers, betAvalaible } = props;
+  const [nextDraw, setNextDraw] = useState({});
+
+  useEffect(() => {
+    socket.on("next_draw", (data) => {
+      setNextDraw(data);
+    });
+  }, [socket]);
 
   //refresh tha last round's number
   useEffect(() => {
@@ -37,6 +44,7 @@ const Board = (props) => {
   return (
     <div className="board">
       <h2>The last Winner numbers are: {lastNumber.length === 1 ? "Waiting for result!!!" : lastNumber.join("; ")}</h2>
+      <h4>{nextDraw.status === "before" ? `End of this round in : ${nextDraw.seconds} seconds` : "All bets are closed: Be Ready for the next round"}</h4>
 
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={1}>
