@@ -21,9 +21,7 @@ It will be perfect if the frontend is in React and the backend in Rust. When it 
 
 <img src="https://referenceprojects-abkno.run-eu-central1.goorm.io/src/github/testdocuments/reactbingo.png" height="400px">
 
-## Features
-
-### Main Game
+# Main Game
 
 ## Rules
 
@@ -39,3 +37,9 @@ It will be perfect if the frontend is in React and the backend in Rust. When it 
 - 00:01 : Calculate and sends all scores
 - 00:04 : Generate the new round's numbers
 - 00:05 : Send the new numbers back to the clients
+
+## Extra features
+
+- Mutual chat for the players
+  - The chat shows the Player's name and the message.
+- Mutual Scoreboard
