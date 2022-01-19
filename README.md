@@ -1,4 +1,4 @@
-# Two Up Digital Test Task
+# Two-Up Digital Test Task
 
 ## Task Description
 
