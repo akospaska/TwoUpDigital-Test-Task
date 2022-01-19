@@ -12,5 +12,18 @@ class Formatter {
 
     return clone;
   }
+
+  getNextDrawingTime() {
+    const actualSeconds = Number(new Date(Date.now()).getSeconds());
+
+    let status;
+
+    if (actualSeconds < 50 && actualSeconds > 5) {
+      status = { status: "before", seconds: 50 - actualSeconds };
+    } else {
+      status = { status: "after" };
+    }
+    return status;
+  }
 }
 export = Formatter;
