@@ -60,6 +60,8 @@ let theNumber: number[] = [0];
 //is the bet avalaible or not
 let betAvalaible: boolean = true;
 
+let cronJobStarted = false;
+
 //empty the actual rolled numbers array and fill with the new values
 const getRandomNumber = () => {
   theNumber.length = 0;
@@ -137,15 +139,9 @@ io.on("connection", (socket: any) => {
     socket.to("TheGame:").emit("bet_avalaible", betAvalaible);
   });
 
-  cronJob2.start();
-
   const cronJob5 = new CronJob("* * * * * *", () => {
     socket.to("TheGame:").emit("next_draw", formatter.getNextDrawingTime());
   });
-
-  cronJob5.start();
-
-  cronJob2.start();
 
   // 00:01 set the new coreboard scores based on the bets
   const cronJob = new CronJob("1 * * * * *", async () => {
@@ -158,6 +154,15 @@ io.on("connection", (socket: any) => {
         }
       });
     });
+
+    //starts the cronjob only the first start
+    if (cronJobStarted === false) {
+      cronJob2.start();
+      cronJob5.start();
+      cronJob.start();
+    }
+
+    cronJobStarted = true;
 
     //refresh on the client side the new rolled numbers
     socket.to("TheGame:").emit("rolled_number", theNumber);
